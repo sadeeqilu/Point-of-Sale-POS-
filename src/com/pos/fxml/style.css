@@ -1,0 +1,155 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 19, 2018, 8:34:27 PM
+    Author     : macbookpro
+*/
+
+.rrr{
+    
+    -fx-background-image: url("(29).jpg");
+    -fx-padding: 15px 15px 15px 15px;
+    
+}
+
+.getty1{
+    -fx-background-image: url("getty1.jpg");
+    -fx-padding: 15px 15px 15px 15px;
+}
+
+.getty2{
+     -fx-background-image: url("getty2.jpg");
+    -fx-padding: 15px 15px 15px 15px;
+    
+}
+
+.getty3{
+    -fx-background-image: url("getty3.jpg");
+    -fx-padding: 15px 15px 15px 15px;
+}
+
+
+.box{
+    -fx-background-color: teal;
+    -fx-border-color: orange;
+    -fx-border-width: 0.5px 0.5px 0.5px 0.5px;
+    -fx-border-radius: 10px;
+}
+
+.table1{
+    -fx-background-color: #2A3135;
+    -fx-text-fill: orange;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-opacity: 0.7;
+}
+
+.table2{
+    -fx-text-fill: #2A3135;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+.txt{
+    -fx-fill: orange;
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+        
+}
+
+.txtbox{
+    -fx-background-color: transparent;
+    -fx-text-fill: orange;
+    -fx-border-color: orange;
+    -fx-border-width: 0px 0px 0.5px 0px;
+    -fx-alignment: center;
+}
+.txtbox1{
+    -fx-background-color: transparent;
+    -fx-text-fill: orange;
+    -fx-border-color: orange;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+    -fx-border-width: 0px 0px 0.5px 0px;
+    -fx-alignment: center;
+}
+
+.awesome{
+    -fx-fill: orange;
+}
+
+.btn{
+    -fx-background-color: transparent;
+    -fx-border-color: #3131b2;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #3131b2;
+    
+    
+}
+
+.btn:hover{
+    -fx-background-color: #3131b2;
+    -fx-text-fill: lightblue;
+    
+}
+
+.btn1{
+    -fx-background-color: transparent;
+    -fx-border-color: orange;
+    -fx-border-width: 0px 0px 0.2px 0px;
+    -fx-text-fill: whitesmoke;
+    -fx-hgap: 10;
+}
+
+.btn1:hover{
+    -fx-background-color: orange;
+    -fx-text-fill:  #2A3135;
+    -fx-font-size: 15px;
+}
+
+.btn2{
+    -fx-background-color: transparent;
+    -fx-border-width: 0px 0.2px 0.2px 0px;
+    -fx-border-color: orange;
+    -fx-text-fill: orange;
+}
+
+.btn2:hover{
+    -fx-background-color:  #2A3135;
+    -fx-text-fill:  orange;
+    -fx-font-size: 17px; 
+}
+
+.btn3{
+    -fx-background-color: transparent;
+    -fx-border-width: 0px 0.2px 0.2px 0px;
+    -fx-border-color: whitesmoke;
+    -fx-text-fill: whitesmoke;
+}
+
+.btn3:hover{
+    -fx-background-color:  #2A3135;
+    -fx-text-fill:  orange;
+}
+
+.btn4{
+    -fx-background-color: transparent;
+    -fx-border-width: 0px 0.2px 0.2px 0px;
+    -fx-border-color: orange;
+   
+}
+.btn4:hover{
+    -fx-background-color:  #2A3135;
+    -fx-text-fill:  orange;
+}
+
+.combo{
+    
+}
+
+.combo:hover{
+    -fx-background-color: white;
+    -fx-text-fill: orange;
+}

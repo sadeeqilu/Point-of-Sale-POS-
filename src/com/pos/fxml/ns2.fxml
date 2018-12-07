@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="vboxMain" alignment="CENTER" maxHeight="619.0" maxWidth="946.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="946.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pos.controller.NewTransactionController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="53.0" prefWidth="699.0" style="-fx-background-color: orange;">
+         <children>
+            <Text fill="#2a3135" strokeType="OUTSIDE" strokeWidth="0.0" text="Point Of Sale">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="66.0" prefHeight="51.0" prefWidth="699.0" spacing="40.0" style="-fx-background-color: #2A3135;">
+         <padding>
+            <Insets left="30.0" right="20.0" />
+         </padding>
+         <children>
+            <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="S/N" wrappingWidth="30.4228515625">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Text>
+            <Text fill="ORANGE" layoutX="84.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" wrappingWidth="125.537109375">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Text>
+            <Text fill="ORANGE" layoutX="30.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty." wrappingWidth="53.7587890625">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Text>
+            <Text fill="ORANGE" layoutX="140.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Text>
+            <Text fill="ORANGE" layoutX="259.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sub Total">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Text>
+            <Region prefHeight="51.0" prefWidth="53.0" HBox.hgrow="SOMETIMES" />
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <JFXButton fx:id="settingsBtn" onAction="#handlSettingsBtn" prefHeight="28.0" prefWidth="136.0" styleClass="btn1" stylesheets="@style.css" text="Settings">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="COG" size="18" wrappingWidth="19.428571701049805" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="logoutBtn" onAction="#handleLogoutBtn" prefHeight="28.0" prefWidth="170.0" styleClass="btn1" stylesheets="@style.css" text="Logout">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="18" wrappingWidth="19.428571701049805" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="226.0" prefWidth="880.0" VBox.vgrow="SOMETIMES">
+         <content>
+            <VBox fx:id="boxTrans" prefHeight="245.0" prefWidth="878.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <HBox fx:id="tBox" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="700.0" spacing="40.0" style="-fx-background-color: white; -fx-border-color: #2A3135;">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <Text fx:id="snTxt" fill="#2a3135" strokeType="OUTSIDE" strokeWidth="0.0" text="  " />
+                        <JFXComboBox fx:id="nameCombo" editable="true" focusColor="ORANGE" onAction="#handleSearchItemCombo" prefHeight="26.0" prefWidth="129.0" unFocusColor="ORANGE" />
+                        <JFXComboBox fx:id="nameCombo1" editable="true" focusColor="ORANGE" layoutX="80.0" layoutY="22.0" onAction="#handleSearchItemCombo" prefHeight="26.0" prefWidth="73.0" unFocusColor="ORANGE" />
+                        <Text fx:id="priceTxt" fill="#2a3135" layoutX="140.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" wrappingWidth="75.5537109375" />
+                        <Text fx:id="subTxt" fill="#2a3135" layoutX="259.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" wrappingWidth="47.5537109375" />
+                        <JFXButton fx:id="delBtn" onAction="#handleDelBtn" styleClass="btn4" stylesheets="@style.css" text="Del" textFill="RED">
+                           <graphic>
+                              <FontAwesomeIconView fill="RED" glyphName="CLOSE" size="18" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="addBtn" layoutX="373.0" layoutY="23.0" onAction="#handleAddBtn" styleClass="btn4" stylesheets="@style.css" text="Add" textFill="GREEN">
+                           <graphic>
+                              <FontAwesomeIconView fill="GREEN" glyphName="PLUS" size="18" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="547.0" prefHeight="54.0" prefWidth="946.0" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" />
+         </padding>
+         <children>
+            <Button fx:id="printReceiptBtn1" mnemonicParsing="false" onAction="#handlePrintReceiptBtn" styleClass="btn2" stylesheets="@style.css" text="Done">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="PRINT" size="20" wrappingWidth="26.571428298950195" />
+               </graphic>
+            </Button>
+            <Button fx:id="payBtn1" layoutX="619.0" layoutY="45.0" mnemonicParsing="false" onAction="#handlePayBtn" styleClass="btn2" stylesheets="@style.css" text="Pay">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="MONEY" size="20" wrappingWidth="31.428571701049805" />
+               </graphic>
+            </Button>
+            <Button fx:id="cancelBtn1" layoutX="619.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleCancelBtn" styleClass="btn2" stylesheets="@style.css" text="Cancel">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="CLOSE" size="20" wrappingWidth="22.714285850524902" />
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <VBox fx:id="totalbox" alignment="CENTER_LEFT" fillWidth="false" prefHeight="179.0" prefWidth="880.0" style="-fx-background-color: #2A3135;" visible="false">
+         <children>
+            <GridPane prefHeight="138.0" prefWidth="276.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL :" />
+                  <Text fill="ORANGE" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMOUNT PAID: " GridPane.rowIndex="1" />
+                  <Text fill="ORANGE" layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHANGE : " GridPane.rowIndex="2" />
+                  <Text fill="ORANGE" layoutX="10.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" GridPane.columnIndex="1" />
+                  <TextField styleClass="txtbox1" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text fill="ORANGE" layoutX="148.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="699.0" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" right="30.0" />
+         </padding>
+         <children>
+            <Button fx:id="printReceiptBtn" mnemonicParsing="false" onAction="#handlePrintReceiptBtn" styleClass="btn2" stylesheets="@style.css" text="Print Receipt">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="PRINT" size="20" wrappingWidth="26.571428298950195" />
+               </graphic>
+            </Button>
+            <Button fx:id="payBtn" layoutX="619.0" layoutY="45.0" mnemonicParsing="false" onAction="#handlePayBtn" styleClass="btn2" stylesheets="@style.css" text="Pay">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="MONEY" size="20" wrappingWidth="31.428571701049805" />
+               </graphic>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="619.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleCancelBtn" styleClass="btn2" stylesheets="@style.css" text="Cancel">
+               <graphic>
+                  <FontAwesomeIconView fill="ORANGE" glyphName="CLOSE" size="20" wrappingWidth="22.714285850524902" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c050dbd-0828-4a4f-99be-7157e24990a7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="72"/>
+	<subDataset name="dataset1" uuid="84f81bb5-0da5-4e93-984b-b5382962ad56"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="price" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="subtotal" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="change" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="11" width="177" height="38" uuid="e9081644-4ea6-4ca4-b60c-27d3a3996931"/>
+				<textElement>
+					<font fontName="Adobe Myungjo Std" size="14"/>
+				</textElement>
+				<text><![CDATA[Point Of Sale (POS)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="378" y="15" width="190" height="20" uuid="7aa3c437-ad13-4de5-8915-e6d2c532777c"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="100" height="20" uuid="62091066-3cb8-4356-8495-792038520f97"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Transaction Receipt]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="22" width="100" height="20" uuid="ba1fd42b-ed39-4596-a49a-b56dcede4f73"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="22" width="100" height="20" uuid="48dae4a9-0967-4049-96b4-5c6eeb13c622"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="22" width="100" height="20" uuid="1d7ad6ac-38ce-4579-a113-b1ed24b46492"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Subtotal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="22" width="100" height="20" uuid="d00e3868-05b0-4543-a5bb-484d4531fd95"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Qty.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Immediate">
+			<textField>
+				<reportElement x="18" y="34" width="100" height="20" uuid="e110cd75-7f2c-4bc6-9b6c-134ac21a6797"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="34" width="100" height="20" uuid="b93b032e-4f5a-429a-b257-aec08d608b88"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="34" width="100" height="20" uuid="c61c712e-877f-4d24-bbdc-f19a9da69a9e"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="34" width="100" height="20" uuid="07476338-89a6-4fa3-99d4-3a38632843e2"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="100" splitType="Prevent">
+			<staticText>
+				<reportElement x="333" y="0" width="100" height="20" uuid="46f417a0-74fd-44a4-b394-5d4135ea78d2"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="a89479ba-02ec-4f06-afb1-f915713de96c"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="32" width="100" height="20" uuid="2a74740e-359a-482a-b229-9823f1b0c20f"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Amount issued:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="65" width="100" height="20" uuid="7ed6f618-fbd0-42e2-b59e-c252f11b9b52"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<text><![CDATA[Change:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="65" width="100" height="20" uuid="b2f61c32-44f2-4d8f-876f-de3f5860489a"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="32" width="100" height="20" uuid="f223513e-a081-4e89-9e16-1c03837fe815"/>
+				<textElement>
+					<font fontName="Adobe Ming Std"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{change}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="468" y="22" width="100" height="20" uuid="3c6d9c30-4dcf-43c5-a76d-dfbb71cba367"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

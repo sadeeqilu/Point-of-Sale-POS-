@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox fx:id="dashboard" alignment="TOP_CENTER" styleClass="rrr" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pos.controller.TransactionController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="657.0" style="-fx-border-color: orange; -fx-border-width: 0px 0px 0.3px 0px; -fx-background-color: #2A3135;">
+         <children>
+            <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="TRANSACTIONS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <TabPane prefHeight="411.0" prefWidth="657.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Sales">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox fx:id="salesVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="657.0" spacing="10.0" style="-fx-border-color: orange; -fx-border-width: 0px 0px 0.2px 0px;">
+                                 <children>
+                                    <Text fill="ORANGE" strokeType="OUTSIDE" strokeWidth="0.0" text="SALES">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Region prefHeight="50.0" prefWidth="119.0" HBox.hgrow="SOMETIMES" />
+                                    <JFXComboBox focusColor="ORANGE" unFocusColor="ORANGE" />
+                                    <JFXDatePicker fx:id="date" defaultColor="ORANGE" onAction="#handleDate" />
+                                    <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="92.0" styleClass="btn2" stylesheets="@style.css" text="New">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="ORANGE" glyphName="PLUS" size="18" />
+                                       </graphic>
+                                    </Button>
+                                    <JFXTextField focusColor="ORANGE" prefHeight="24.0" prefWidth="168.0" promptText="search" unFocusColor="ORANGE" />
+                                    <FontAwesomeIconView fill="ORANGE" glyphName="SEARCH" size="18" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+          </Tab>
+          <Tab text="Purchases">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Text fx:id="txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</VBox>
